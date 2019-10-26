@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Mountain</string>
+
+    <string-array name="mountain_name">
+        <item>Merbabu</item>
+        <item>Sumbing</item>
+        <item>Sindoro</item>
+        <item>Slamet</item>
+        <item>Semeru</item>
+        <item>Bromo</item>
+        <item>Raung</item>
+        <item>Ijen</item>
+        <item>Rinjani</item>
+        <item>Kerinci</item>
+    </string-array>
+
+    <array name="mountain_image">
+        <item>@drawable/g_merbabu</item>
+        <item>@drawable/g_sumbing</item>
+        <item>@drawable/g_sindoro</item>
+        <item>@drawable/g_slamet</item>
+        <item>@drawable/g_semeru</item>
+        <item>@drawable/g_bromo</item>
+        <item>@drawable/g_raung</item>
+        <item>@drawable/g_ijen</item>
+        <item>@drawable/g_rinjani</item>
+        <item>@drawable/g_kerinci</item>
+    </array>
+</resources>
