@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Mountain</string>
+    <string name="title_mountain" />
+    <string name="title_equipment" />
+    <string name="selamat_datang_di_halaman_mountain">Beberapa Gunung Terkenal di Indonesia</string>
+    <string name="selamat_datang_di_halaman_equipment">Peralatan Wajib untuk Pendakian</string>
+    <string name="nama">nama</string>
 
     <string-array name="mountain_name">
         <item>Merbabu</item>
@@ -14,6 +19,19 @@
         <item>Kerinci</item>
     </string-array>
 
+    <string-array name="equipment_name">
+        <item>Tenda</item>
+        <item>Carrier_atau_Tas_Gunung</item>
+        <item>Kompas</item>
+        <item>P3K</item>
+        <item>Sleeping_Bag</item>
+        <item>Cooking_Set_Outdoor</item>
+        <item>Trecking_Pole</item>
+        <item>Jaket_Waterproof</item>
+        <item>Headlamp</item>
+        <item>Hiking_Shoes</item>
+    </string-array>
+
     <array name="mountain_image">
         <item>@drawable/g_merbabu</item>
         <item>@drawable/g_sumbing</item>
@@ -25,5 +43,18 @@
         <item>@drawable/g_ijen</item>
         <item>@drawable/g_rinjani</item>
         <item>@drawable/g_kerinci</item>
+    </array>
+
+    <array name="equipment_image">
+        <item>@drawable/tenda</item>
+        <item>@drawable/carrier</item>
+        <item>@drawable/kompas</item>
+        <item>@drawable/p3k</item>
+        <item>@drawable/sb</item>
+        <item>@drawable/cokset</item>
+        <item>@drawable/treking_pole</item>
+        <item>@drawable/jaket</item>
+        <item>@drawable/headlamp</item>
+        <item>@drawable/sepatu</item>
     </array>
 </resources>

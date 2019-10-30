@@ -2,37 +2,44 @@ package com.example.mountain
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val items: MutableList<Item> = mutableListOf()
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val fragment: Fragment
+
+        when (item.itemId) {
+            R.id.navigation_foods -> {
+                fragment = MountainFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container_layout, fragment, fragment.javaClass.simpleName)
+                    .commit();
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_mountain -> {
+
+                fragment = EquipmentFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container_layout, fragment, fragment.javaClass.simpleName)
+                    .commit();
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val list = findViewById<RecyclerView>(R.id.mountain_list)
-        initDATA()
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        list.layoutManager = LinearLayoutManager(this)
-        list.adapter = RecyclerViewAdapter(this, items)
-
-    }
-
-    private fun initDATA(){
-        val name = resources.getStringArray(R.array.mountain_name)
-        val image = resources.obtainTypedArray(R.array.mountain_image)
-
-        items.clear()
-
-        for (i in name.indices) {
-            items.add(
-                Item(name[i],
-                    image.getResourceId(i, 0))
-            )
+        if (savedInstanceState == null) {
+            navigation.selectedItemId = R.id.navigation_foods
         }
-        image.recycle()
     }
+
 }

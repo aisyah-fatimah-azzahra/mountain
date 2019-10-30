@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MountainFragment: Fragment() {
+class EquipmentFragment: Fragment() {
 
     private var items: MutableList<Item> = mutableListOf()
 
@@ -17,20 +17,18 @@ class MountainFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_mountain, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_equipment, container, false)
         initView(view)
-        return view
+        return  view
     }
-
-    private fun initData() {
-        val name = resources.getStringArray(R.array.mountain_name)
-        val image = resources.obtainTypedArray(R.array.mountain_image)
+    private fun initData(){
+        val name = resources.getStringArray(R.array.equipment_name)
+        val image = resources.obtainTypedArray(R.array.equipment_image)
 
         items.clear()
-        for (i in name.indices) {
+        for (i in name.indices){
             items.add(
-                Item(
-                    name[i],
+                Item(name[i],
                     image.getResourceId(i, 0)
                 )
             )
@@ -39,10 +37,15 @@ class MountainFragment: Fragment() {
         image.recycle()
     }
 
-    fun initView(view: View) {
+    fun initView(view: View){
         initData()
-        val rv = view.findViewById<RecyclerView>(R.id.mountain_list)
+        val rv = view.findViewById<RecyclerView>(R.id.peralatan_list)
         rv.layoutManager = LinearLayoutManager(activity)
         rv.adapter = activity?.let { RecyclerViewAdapter(it, items) }
     }
+
+
+
 }
+
+
